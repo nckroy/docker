@@ -4,6 +4,10 @@ MAINTAINER "Nick Roy" <roy.nicholas@gmail.com>
 ENV ANSIBLE_VERSION=2.9
 
 RUN set -ex && \
+#    apk add --no-cache --update \
+#    --repository http://dl-cdn.alpinelinux.org/alpine/edge/main \
+#    --repository http://dl-cdn.alpinelinux.org/alpine/edge/community \
+#    php7-fpm php7-mysqli php7-mcrypt php7-mbstring && \
     buildDeps="python3-dev build-base libffi-dev openssl-dev" && \
     apk add --no-cache $buildDeps python3 py-pip ca-certificates bash && \
     pip3 install --no-cache-dir --upgrade pip && \
